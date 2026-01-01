@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "IS Lecture viewer",
+    "version": "1.0",
+    "description": "Watch IS lectures in your browser without needing to download anything.",
+    "content_scripts": [
+        {
+            "world": "ISOLATED",
+            "matches": [
+                "http://192.168.10.108:5500/*",
+                "https://video.muni.cz/*"
+            ],
+            "js": [
+                "inject/bridge.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "world": "MAIN",
+            "matches": [
+                "http://192.168.10.108:5500/*",
+                "https://video.muni.cz/*"
+            ],
+            "js": [
+                "inject/hijack.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "pages/viewer.html",
+                "pages/viewer.js",
+                "pages/viewer.css"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/pages/viewer.css" rel="stylesheet" type="text/css">
+    <link href="/pages/videojs/video-js.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div id="content">
+        <h1 id="h">Video player</h1>
+
+        <video id="my-video" class="video-js" controls preload="auto" width="640" height="250" data-setup='{
+            "playbackRates": [1, 1.25, 1.5, 2, 5],
+            "fluid": true
+        }'>
+            <source id="video_src" type="video/mp4" />
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+        </video>
+        <a id="download_button" href="/">💾Download video</a>
+
+        <div class="padding"></div>
+        <div class="warning">⚠️ This extention (including this page) is a personal project of a student, it is NOT
+            official IS page.</div>
+
+        <div class="warning">⚠️ Make sure to follow copyright laws!</div>
+    </div>
+
+    <script src="/pages/viewer.js"></script>
+    <script src="/pages/videojs/video.min.js"></script>
+</body>
+
+</html>

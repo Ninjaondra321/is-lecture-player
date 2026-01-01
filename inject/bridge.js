@@ -1,0 +1,1 @@
+document.documentElement.setAttribute('data-ext-viewer', chrome.runtime.getURL("pages/viewer.html"));

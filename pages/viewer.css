@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(39, 21, 63);
+    color: #ebc9ff;
+}
+
+
+#content {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 95%;
+}
