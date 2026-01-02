@@ -1,7 +1,7 @@
 const nativeConfirm = window.confirm;
 
 window.confirm = function (message) {
-    const viewerBaseUrl = document.documentElement.getAttribute('data-ext-viewer');
+    const viewerBaseUrl = document.documentElement.getAttribute('player-url');
     const html = document.body.innerHTML;
     const url_regex = /https?:\/\/[^\s$.?#].[^\s]*/g;
     const urls = html.match(url_regex);

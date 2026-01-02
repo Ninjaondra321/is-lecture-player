@@ -1,1 +1,1 @@
-document.documentElement.setAttribute('data-ext-viewer', chrome.runtime.getURL("pages/viewer.html"));
+document.documentElement.setAttribute('player-url', chrome.runtime.getURL("pages/player.html"));
