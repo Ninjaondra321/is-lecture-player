@@ -5,7 +5,7 @@ window.confirm = function (message) {
     const html = document.body.innerHTML;
     const url_regex = /https?:\/\/[^\s$.?#].[^\s]*/g;
     const urls = html.match(url_regex);
-    const target = viewerBaseUrl + "?id=" + encodeURIComponent(urls[1]);
+    const target = viewerBaseUrl + "?src=" + encodeURIComponent(urls[1]);
 
     const answer = nativeConfirm(message);
 
