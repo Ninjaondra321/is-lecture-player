@@ -13,7 +13,7 @@
         {
             "world": "ISOLATED",
             "matches": [
-                "https://video.muni.cz/*"
+                "https://video.muni.cz/download.cgi?*"
             ],
             "js": [
                 "inject/bridge.js"
@@ -23,7 +23,7 @@
         {
             "world": "MAIN",
             "matches": [
-                "https://video.muni.cz/*"
+                "https://video.muni.cz/download.cgi?*"
             ],
             "js": [
                 "inject/hijack.js"
