@@ -12,12 +12,13 @@
 
 <body>
     <div id="content">
-        <h1 id="h">Video player</h1>
+        <div class="row">
+            <img src="/icons/icon48.png" alt="Extention logo" width="48" height="48">
+            <h1 id="h">Video player</h1>
+        </div>
 
-        <video id="my-video" class="video-js" controls preload="auto" width="640" height="250" data-setup='{
-            "playbackRates": [1, 1.25, 1.5, 2, 5],
-            "fluid": true
-        }'>
+        <video id="my-video" class="video-js" controls preload="auto" width="640" height="250"
+            data-setup='{"playbackRates": [1, 1.25, 1.5, 2, 5],"fluid": true}'>
             <source id="video_src" type="video/mp4" />
             <p class="vjs-no-js">
                 To view this video please enable JavaScript, and consider upgrading to a
@@ -25,13 +26,19 @@
                 <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
             </p>
         </video>
-        <a id="download_button" href="/">💾Download video</a>
+        <a id="download_button" href="/" download>💾Download video</a>
 
         <div class="padding"></div>
         <div class="warning">⚠️ This extention (including this page) is a personal project of a student, it is NOT
             official IS page.</div>
 
         <div class="warning">⚠️ Make sure to follow copyright laws!</div>
+
+        <footer>
+            <a target="_blank" href="https://notime.cz">NoTime</a>
+            <a target="_blank" href="https://github.com/Ninjaondra321/is-lecture-player">GitHub</a>
+        </footer>
+        <div class="info">ℹ️ This page is in beta version - design of this page will be updated soon...</div>
     </div>
 
     <script src="/pages/viewer.js"></script>

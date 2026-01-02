@@ -9,3 +9,9 @@ body {
     margin: 0 auto;
     width: 95%;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
