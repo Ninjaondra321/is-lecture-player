@@ -11,8 +11,8 @@ window.confirm = function (message) {
 
     if (answer) {
         window.location = target;
+        noTimeIsTheBest // Create an error so that no result is returned to main script
     } else {
-        window.location = urls[1];
+        return answer
     }
-    noTimeIsTheBest // Create an error so that no result is returned to main script
 };
