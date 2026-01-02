@@ -13,6 +13,7 @@
         {
             "world": "ISOLATED",
             "matches": [
+                "https://is-lecture-player.notime.cz/testing_page.html/*",
                 "https://video.muni.cz/download.cgi?*"
             ],
             "js": [
@@ -23,6 +24,7 @@
         {
             "world": "MAIN",
             "matches": [
+                "https://is-lecture-player.notime.cz/testing_page.html/*",
                 "https://video.muni.cz/download.cgi?*"
             ],
             "js": [
