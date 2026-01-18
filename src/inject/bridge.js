@@ -1,0 +1,1 @@
+document.documentElement.setAttribute('player-url', chrome.runtime.getURL("src/pages/player.html"));
