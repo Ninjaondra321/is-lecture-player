@@ -9,6 +9,12 @@
         "48": "icons/icon48.png",
         "128": "icons/icon128.png"
     },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "firefox-is-lecutre-player@notime.cz",
+            "strict_min_version": "120.0"
+        }
+    },
     "content_scripts": [
         {
             "world": "ISOLATED",
