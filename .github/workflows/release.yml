@@ -1,0 +1,54 @@
+name: Release Extension
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'manifest.json' # Workflow triggers on manifest changes
+
+permissions:
+  contents: write # Required to create releases
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Crucial: Fetches all history so we can check existing tags
+
+      # Check if this version has already been released
+      - name: Check Version & Tag Existence
+        id: check_version
+        run: |
+          # 1. Extract version from manifest
+          VERSION=$(jq -r .version manifest.json)
+          echo "Manifest version: $VERSION"
+          
+          # 2. Check if a git tag for this version already exists
+          if git rev-parse "v$VERSION" >/dev/null 2>&1; then
+            echo "Tag v$VERSION already exists. Skipping release."
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "New version detected. Proceeding with release."
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+          fi
+
+      # If new version
+      - name: Zip Source Code
+        if: steps.check_version.outputs.exists == 'false'
+        run: |
+          zip -r is-lecture-player-v${{ steps.check_version.outputs.version }}.zip manigest.json src
+
+      # Create Release and Tag
+      - name: Create Release
+        if: steps.check_version.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.check_version.outputs.version }}
+          name: Release v${{ steps.check_version.outputs.version }}
+          files: is-lecture-player-v${{ steps.check_version.outputs.version }}.zip
+          generate_release_notes: true
