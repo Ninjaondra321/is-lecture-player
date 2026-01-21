@@ -1,0 +1,50 @@
+.vjs-control-bar:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(0deg,
+            #1f1f1ff7 0%,
+            rgba(31, 31, 31, 0.738) 19%,
+            rgba(31, 31, 31, 0.541) 34%,
+            rgba(31, 31, 31, 0.382) 47%,
+            rgba(31, 31, 31, 0.278) 56.5%,
+            rgba(31, 31, 31, 0.194) 65%,
+            rgba(31, 31, 31, 0.126) 73%,
+            rgba(31, 31, 31, 0.075) 80.2%,
+            rgba(31, 31, 31, 0.042) 86.1%,
+            rgba(31, 31, 31, 0.021) 91%,
+            rgba(31, 31, 31, 0.008) 95.2%,
+            rgba(31, 31, 31, 0.002) 98.2%,
+            transparent 100%);
+    height: calc(100% + 35px);
+    top: -35px;
+}
+
+#my-video video:focus-visible {
+    opacity: 1;
+    outline: none;
+}
+
+/* The container for the visual feedback */
+.vjs-feedback-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 6px;
+    font-size: 24px;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 100;
+    text-align: center;
+}
+
+.vjs-feedback-overlay.active {
+    opacity: 1;
+}

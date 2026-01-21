@@ -1,11 +1,22 @@
-body {
-    background-color: rgb(39, 21, 63);
-    color: #ebc9ff;
+@font-face {
+    font-family: 'Abel';
+    src: url('/src/fonts/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: 400;
 }
 
+body {
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    font-family: 'Abel', sans-serif;
+    font-size: 100%;
+}
+
+h1 {
+    padding-left: 8px;
+}
 
 #content {
-    max-width: 1000px;
+    max-width: 1300px;
     margin: 0 auto;
     width: 95%;
 }
@@ -14,4 +25,57 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+#my-video {
+    margin-bottom: 12px;
+}
+
+.button {
+    padding: 12px 10px;
+    background: none;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+.buttons-row {
+    margin-bottom: 18px;
+}
+
+.warning {
+    background-color: #4f4010;
+    padding: 16px 12px;
+    margin-top: 12px;
+    margin: 8px 0px;
+    border-radius: 16px;
+    color: #ffffff;
+    border: 1px solid #d1b919;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 12px;
+}
+
+footer a {
+    color: #e0e0e0;
+}
+
+.video-js {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: #1f1f1ff7 0px 3px 3px 0px;
+}
+
+.vjs-control-bar {
+    background: none !important;
 }
