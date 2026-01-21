@@ -67,7 +67,7 @@ class SpeedControl extends Component {
         let duration = this.player_.duration();
 
         if (this.player_.playbackRate() == 1) {
-            this.tooltip.innerHTML = `Normal speed`;
+            this.tooltip.textContent = `Normal speed`;
             return;
         }
 
@@ -82,7 +82,7 @@ class SpeedControl extends Component {
         }
         let comparation = (rate < 1) ? "slower" : "faster 🎉 "
 
-        this.tooltip.innerHTML = `${savedMinutes} ${unit} ${comparation}`;
+        this.tooltip.textContent = `${savedMinutes} ${unit} ${comparation}`;
     }
 
     handleInput(e) {
