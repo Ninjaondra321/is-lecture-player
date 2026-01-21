@@ -41,7 +41,7 @@ jobs:
       - name: Zip Source Code
         if: steps.check_version.outputs.exists == 'false'
         run: |
-          zip -r is-lecture-player-v${{ steps.check_version.outputs.version }}.zip manigest.json src
+          zip -r is-lecture-player-v${{ steps.check_version.outputs.version }}.zip manifest.json src
 
       # Create Release and Tag
       - name: Create Release
