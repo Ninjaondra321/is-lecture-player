@@ -12,7 +12,12 @@
     "browser_specific_settings": {
         "gecko": {
             "id": "firefox-is-lecutre-player@notime.cz",
-            "strict_min_version": "120.0"
+            "strict_min_version": "120.0",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
         }
     },
     "content_scripts": [
